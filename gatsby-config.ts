@@ -77,6 +77,17 @@ const config: GatsbyConfig = {
                     }
                 ]
             }
+        },
+        {
+            resolve: "gatsby-plugin-alias-imports",
+            options:{
+                alias: {
+                    "@src": "src",
+                    "@components": "src/components",
+                    "@pages": "src/pages"
+                },
+             extensions: ["js"]
+            }
         }
     ]
 };
