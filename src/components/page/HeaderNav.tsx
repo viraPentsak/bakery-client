@@ -1,5 +1,5 @@
 import * as React from "react";
-import Navigation from "./Navigation";
+import Navigation from "./../Navigation";
 
 const listClassName: string = "flex flex-row justify-items-center leading-4";
 const listItemClassName: string = "flex-grow";

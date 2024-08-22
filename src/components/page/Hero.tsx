@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = (
     return (
         <div className={className}>
             <div className="relative">
-                <StaticImage src={"./../images/hero_banner.jpg"}
+                <StaticImage src={"./../../images/hero_banner.jpg"}
                              placeholder="blurred"
                              layout={"fullWidth"}
                              style={{height: "900px"}}
