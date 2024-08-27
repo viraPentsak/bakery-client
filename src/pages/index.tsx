@@ -3,6 +3,7 @@ import type {HeadFC, PageProps} from "gatsby"
 import Section from "../components/Section";
 import {useInView} from "react-intersection-observer";
 import {Hero, PageLayout} from "./../components/page";
+import {dashed_line} from "../images/svg";
 
 const sections = [
     "Cakes",
@@ -15,12 +16,17 @@ const IndexPage: React.FC<PageProps> = () => {
     const [ref, inView] = useInView();
 
     const heroSection = <div ref={ref}>
-        <Hero className={"bg-slate-700"}>
-            <div className="text-white text-center py-10  px-5">
-                <div className="text-7xl pb-5 font-serif">
-                    Pastry with love
+        <Hero className={"bg-slate-700"} >
+            <div className="pt-[--header-height] md:pt-[--header-height-md]">
+                <div className="text-white text-center py-10 px-5">
+                    <div className="text-3xl md:text-7xl pb-5 font-serif">
+                        Pastry with love
+                    </div>
+                    <div>
+                        {dashed_line}
+                    </div>
+                    <p className="text-xl">We’re bringing you fresh ingredients every day in ways you can’t resist.</p>
                 </div>
-                <p className="text-xl">We’re bringing you fresh ingredients every day in ways you can’t resist.</p>
             </div>
         </Hero>
     </div>;

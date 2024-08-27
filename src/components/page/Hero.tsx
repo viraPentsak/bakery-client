@@ -1,25 +1,31 @@
 import * as React from "react";
 import {StaticImage} from "gatsby-plugin-image";
+import {twMerge} from "tw-merge";
+import clsx from "clsx";
 
 interface HeroProps {
     children?: React.ReactNode;
     className?: string;
+    childrenClassName?: string;
 }
 
 const Hero: React.FC<HeroProps> = (
     {
         children,
-        className
+        className,
+        childrenClassName : childrenCN= ''
     }) => {
+
+    const childrenClassName = twMerge("absolute inset-0 flex flex-col justify-center" + childrenCN);
+
     return (
         <div className={className}>
-            <div className="relative">
+            <div className="relative min-h-dvh">
                 <StaticImage src={"./../../images/hero_banner.jpg"}
                              placeholder="blurred"
                              layout={"fullWidth"}
-                             style={{height: "900px"}}
                              alt={"Bakery hero banner"}/>
-                {children && <div className="absolute inset-0">
+                {children && <div className={childrenClassName}>
                     {children}
                 </div>}
             </div>
