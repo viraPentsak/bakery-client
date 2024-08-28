@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Navigation from "./../Navigation";
 
 const listClassName: string = "flex flex-row justify-items-center leading-4";

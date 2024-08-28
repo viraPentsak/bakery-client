@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import HeaderNav from "./HeaderNav";
 import NavLogo from "./../NavLogo";
 import clsx from "clsx";
@@ -15,7 +15,10 @@ const Header: React.FC<HeaderProps> = (props) => {
             <div className="container">
                 <div className="grid grid-cols-6 gap-4 align-middle items-center">
                     <div className="col-span-1">
-                        <NavLogo href="/" logoClassName="max-w-32 max-h-14" activeClassName="text-white"/>
+                        <NavLogo href="/"
+                                 destination="Home page link"
+                                 logoClassName="max-h-16 p-2"
+                                 activeClassName="text-white"/>
                     </div>
                     <div className="col-span-4">
                         <HeaderNav/>

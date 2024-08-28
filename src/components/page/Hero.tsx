@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {StaticImage} from "gatsby-plugin-image";
 import {twMerge} from "tw-merge";
 import clsx from "clsx";
@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = (
         childrenClassName : childrenCN= ''
     }) => {
 
-    const childrenClassName = twMerge("absolute inset-0 flex flex-col justify-center" + childrenCN);
+    const childrenClassName = twMerge(clsx("absolute inset-0 flex flex-col justify-center", childrenCN));
 
     return (
         <div className={className}>

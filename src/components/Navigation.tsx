@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {getNavLinks} from "../hooks";
 import NavLink from "./NavLink";
 
