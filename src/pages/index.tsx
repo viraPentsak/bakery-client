@@ -1,9 +1,11 @@
-import * as React from "react"
+import React from "react"
 import type {HeadFC, PageProps} from "gatsby"
 import Section from "../components/Section";
 import {useInView} from "react-intersection-observer";
 import {Hero, PageLayout} from "./../components/page";
-import {dashed_line} from "../images/svg";
+import DashedLine from "@svg/dashed_line.svg";
+import NavLink from "../components/NavLink";
+
 
 const sections = [
     "Cakes",
@@ -12,20 +14,36 @@ const sections = [
     "Featured dish receipt",
 ];
 
+const menuButton = (
+    <NavLink href="/menu"
+             className="serif uppercase
+             font-bold
+             border border-dashed border-white/50
+             py-4 px-6 md:px-10 xl:px-14
+             bg-stone-700/60
+             hover:bg-stone-700/80
+             hover:border-solid">
+        Our Menu
+    </NavLink>);
+
 const IndexPage: React.FC<PageProps> = () => {
     const [ref, inView] = useInView();
 
     const heroSection = <div ref={ref}>
-        <Hero className={"bg-slate-700"} >
+        <Hero className="bg-slate-700" childrenClassName="bg-slate-700/30">
             <div className="pt-[--header-height] md:pt-[--header-height-md]">
                 <div className="text-white text-center py-10 px-5">
-                    <div className="text-3xl md:text-7xl pb-5 font-serif">
+                    <div className="text-3xl xl:text-8xl md:text-7xl pb-5 md:pb-10 xl:pb-14 font-serif font-bold">
                         Pastry with love
                     </div>
-                    <div>
-                        {dashed_line}
+                    <div className="pb-5 md:pb-10 xl:pb-16">
+                        <DashedLine className="m-auto"/>
                     </div>
-                    <p className="text-xl">We’re bringing you fresh ingredients every day in ways you can’t resist.</p>
+                    <div className="md:w-1/4 mx-auto">
+                        <p className="text-xl md:text-2xl pb-5 md:pb-10 xl:pb-16">We’re bringing you fresh ingredients
+                            every day in ways you can’t resist.</p>
+                        {menuButton}
+                    </div>
                 </div>
             </div>
         </Hero>

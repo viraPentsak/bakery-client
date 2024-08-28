@@ -22,6 +22,7 @@ const Hero: React.FC<HeroProps> = (
         <div className={className}>
             <div className="relative min-h-dvh">
                 <StaticImage src={"./../../images/hero_banner.jpg"}
+                             className="min-h-dvh"
                              placeholder="blurred"
                              layout={"fullWidth"}
                              alt={"Bakery hero banner"}/>

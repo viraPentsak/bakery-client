@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                     <div className="col-span-1">
                         <NavLogo href="/"
                                  destination="Home page link"
-                                 logoClassName="max-h-16 p-2"
+                                 logoClassName="w-16 md:w-32 max-h-16 p-2"
                                  activeClassName="text-white"/>
                     </div>
                     <div className="col-span-4">
