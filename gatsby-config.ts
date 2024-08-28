@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
         title: `bakery`,
         menuLinks: [
             {
-                name: "home",
+                name: "welcome",
                 link: "/"
             },
             {
@@ -66,7 +66,7 @@ const config: GatsbyConfig = {
                 mode: "async",
                 enableListener: true,
                 preconnect: ["https://fonts.gstatic.com"],
-                web:[
+                web: [
                     {
                         name: "Alegreya",
                         file: "https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700"
@@ -80,13 +80,22 @@ const config: GatsbyConfig = {
         },
         {
             resolve: "gatsby-plugin-alias-imports",
-            options:{
+            options: {
                 alias: {
                     "@src": "src",
                     "@components": "src/components",
-                    "@pages": "src/pages"
+                    "@pages": "src/pages",
+                    "@svg": "src/svg"
                 },
-             extensions: ["js"]
+                extensions: ["js"]
+            }
+        },
+        {
+            resolve: "gatsby-plugin-react-svg",
+            options: {
+                rule: {
+                    include: /svg/
+                }
             }
         }
     ]
