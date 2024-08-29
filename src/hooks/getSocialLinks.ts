@@ -7,7 +7,7 @@ const getSocialLinks = (): I_GeneralLink[] => {
         site{
             siteMetadata{
                 title
-                menuLinks{
+                socialLinks{
                     name
                     link
                 }

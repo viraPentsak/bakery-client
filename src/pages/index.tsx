@@ -27,11 +27,11 @@ const menuButton = (
     </NavLink>);
 
 const IndexPage: React.FC<PageProps> = () => {
-    const [ref, inView] = useInView();
+    const [ref, inView]: [React.Ref<HTMLDivElement>, boolean] = useInView();
 
     const heroSection = <div ref={ref}>
-        <Hero className="bg-slate-700" childrenClassName="bg-slate-700/30">
-            <div className="pt-[--header-height] md:pt-[--header-height-md]">
+        <Hero className="bg-slate-700" childrenClassName="bg-slate-700/30" imgClassName="min-h-80 xl:min-h-96">
+            <div className="mt-[--header-height] md:mt-[--header-height-md]">
                 <div className="text-white text-center py-10 px-5">
                     <div className="text-3xl xl:text-8xl md:text-7xl pb-5 md:pb-10 xl:pb-14 font-serif font-bold">
                         Pastry with love
@@ -39,7 +39,7 @@ const IndexPage: React.FC<PageProps> = () => {
                     <div className="pb-5 md:pb-10 xl:pb-16">
                         <DashedLine className="m-auto"/>
                     </div>
-                    <div className="md:w-1/4 mx-auto">
+                    <div className="md:w-3/4 xl:w-1/4 mx-auto">
                         <p className="text-xl md:text-2xl pb-5 md:pb-10 xl:pb-16">We’re bringing you fresh ingredients
                             every day in ways you can’t resist.</p>
                         {menuButton}

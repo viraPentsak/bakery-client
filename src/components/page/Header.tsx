@@ -2,6 +2,7 @@ import React from "react";
 import HeaderNav from "./HeaderNav";
 import NavLogo from "./../NavLogo";
 import clsx from "clsx";
+import SocialLinks from "../SocialLinks";
 
 interface HeaderProps {
     className?: string
@@ -23,7 +24,10 @@ const Header: React.FC<HeaderProps> = (props) => {
                     <div className="col-span-4">
                         <HeaderNav/>
                     </div>
-                    <div className="col-span-1">social links</div>
+                    <div className="col-span-1">
+                        <SocialLinks className="text-white active:text-white p-2 border border-transparent hover:border-white hover:bg-white/20"
+                                     wrapperClassName="justify-end"/>
+                    </div>
                 </div>
             </div>
         </div>
