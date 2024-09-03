@@ -13,7 +13,7 @@ import {
 } from "./home";
 
 const sections = [
-    {title: "Cakes", element: CakeSection},
+    {element: CakeSection},
     {title: "Menu", element: MenuSection},
     {title: "Dish", element: currentDishSection},
     {title: "Feature receipt", element: FeaturedSection},
