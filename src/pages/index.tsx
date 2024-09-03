@@ -21,8 +21,8 @@ const sections = [
 
 const menuButton = (
     <NavLink href="/menu"
-             className="serif uppercase
-             font-bold
+             className="uppercase
+             font-serif font-bold
              border border-dashed border-white/50
              py-4 px-6 md:px-10 xl:px-14
              bg-stone-700/60
@@ -35,16 +35,18 @@ const IndexPage: React.FC<PageProps> = () => {
     const [ref, inView] = useInView();
 
     const heroSection = <div ref={ref}>
-        <Hero className="bg-slate-700" childrenClassName="bg-slate-700/30" imgClassName="min-h-80 xl:min-h-96">
-            <div className="mt-[--header-height] md:mt-[--header-height-md]">
+        <Hero className="bg-slate-700"
+              childrenClassName="bg-slate-700/30 max-h-[900px]"
+              imgClassName="min-h-80 max-h-[900px]">
+            <div className="container max-w-screen-xl pt-[--header-height] md:pt-[--header-height-md]">
                 <div className="text-white text-center py-10 px-5">
                     <div className="text-3xl xl:text-8xl md:text-7xl pb-5 md:pb-10 xl:pb-14 font-serif font-bold">
                         Pastry with love
                     </div>
-                    <div className="pb-5 md:pb-10 xl:pb-16">
+                    <div className="pb-5 md:pb-10 xl:pb-14">
                         <DashedLine className="m-auto"/>
                     </div>
-                    <div className="md:w-3/4 xl:w-1/4 mx-auto">
+                    <div className="md:w-3/4 xl:w-2/4 mx-auto">
                         <p className="text-xl md:text-2xl pb-5 md:pb-10 xl:pb-16">We’re bringing you fresh ingredients
                             every day in ways you can’t resist.</p>
                         {menuButton}
@@ -58,7 +60,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <PageLayout headerClassName={inView ? " bg-stone-900/30" : " bg-stone-900"} beforeMain={heroSection}>
             {sections.map((section) => (
                 <Section key={section.title}
-                         className={"min-h-dvh py-8 md:py-16 xl:py-20 px-5 border-t-2 border-stone-800"}>
+                         className={"py-8 md:py-14 xl:py-18 px-5 border-t-2 border-stone-800"}>
                     {section.title && <h2 className="text-5xl text-center font-serif font-bold">{section.title}</h2>}
                     <section.element/>
                 </Section>

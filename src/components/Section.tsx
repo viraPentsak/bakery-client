@@ -22,7 +22,7 @@ const Section: React.FC<SectionProps >  = (
     }) => {
     return (
         <section className={className} {...rest}>
-            <div className={container ? "container" : ""}>
+            <div className={container ? "container max-w-screen-xl" : ""}>
                 {children}
             </div>
         </section>

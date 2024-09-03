@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = (
 
     return (
         <div className={className}>
-            <div className="relative min-h-dvh">
+            <div className="relative">
                 <StaticImage src={"./../../images/hero_banner.jpg"}
                              className={imageCN}
                              placeholder="blurred"
