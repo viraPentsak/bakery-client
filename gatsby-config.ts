@@ -74,6 +74,10 @@ const config: GatsbyConfig = {
                     {
                         name: "Roboto",
                         file: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700"
+                    },
+                    {
+                        name: "Great Vibes",
+                        file: "https://fonts.googleapis.com/css2?family=Great+Vibes"
                     }
                 ]
             }

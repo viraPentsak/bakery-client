@@ -21,7 +21,7 @@ const PageLayout: React.FC<PageLayoutProps> = (
         footerClassName
     }) => {
     return (
-        <div className="page">
+        <div className="page text-stone-700">
             <Header className={headerClassName}/>
             {beforeMain}
             <div className="main">

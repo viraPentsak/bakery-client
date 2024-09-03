@@ -5,13 +5,18 @@ import {useInView} from "react-intersection-observer";
 import {Hero, PageLayout} from "./../components/page";
 import DashedLine from "@svg/dashed_line.svg";
 import NavLink from "../components/NavLink";
-
+import {
+    CakeSection,
+    MenuSection,
+    currentDishSection,
+    FeaturedSection,
+} from "./home";
 
 const sections = [
-    "Cakes",
-    "Menu Slider",
-    "Breakfast",
-    "Featured dish receipt",
+    {title: "Cakes", element: CakeSection},
+    {title: "Menu", element: MenuSection},
+    {title: "Dish", element: currentDishSection},
+    {title: "Feature receipt", element: FeaturedSection},
 ];
 
 const menuButton = (
@@ -27,7 +32,7 @@ const menuButton = (
     </NavLink>);
 
 const IndexPage: React.FC<PageProps> = () => {
-    const [ref, inView]: [React.Ref<HTMLDivElement>, boolean] = useInView();
+    const [ref, inView] = useInView();
 
     const heroSection = <div ref={ref}>
         <Hero className="bg-slate-700" childrenClassName="bg-slate-700/30" imgClassName="min-h-80 xl:min-h-96">
@@ -52,9 +57,10 @@ const IndexPage: React.FC<PageProps> = () => {
     return (
         <PageLayout headerClassName={inView ? " bg-stone-900/30" : " bg-stone-900"} beforeMain={heroSection}>
             {sections.map((section) => (
-                <Section key={section}
-                         className={"h-dvh p-5 border-t-2 border-stone-800"}>
-                    <h2 className="text-5xl text-center font-serif font-bold">{section}</h2>
+                <Section key={section.title}
+                         className={"min-h-dvh py-8 md:py-16 xl:py-20 px-5 border-t-2 border-stone-800"}>
+                    {section.title && <h2 className="text-5xl text-center font-serif font-bold">{section.title}</h2>}
+                    <section.element/>
                 </Section>
             ))}
         </PageLayout>)

@@ -8,12 +8,13 @@ module.exports = {
     ],
     theme: {
         extend: {
-            zIndex:{
+            zIndex: {
                 'header': '100'
             },
-            fontFamily:{
+            fontFamily: {
                 'sans': ['Roboto', ...defaultTheme.fontFamily.sans],
                 'serif': ['Alegreya', ...defaultTheme.fontFamily.serif],
+                'cursive': ['Great Vibes', 'Alegreya', ...defaultTheme.fontFamily.serif]
             }
         },
         container: {center: true}
