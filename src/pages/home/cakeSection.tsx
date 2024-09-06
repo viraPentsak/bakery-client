@@ -23,8 +23,8 @@ const CakeSection = () => {
                             <div className="border-t border-b border-stone-300 my-4 p-2.5 basis-20 grow">Black-Blake
                             </div>
                         </div>
-                        <Quote className="text-stone-500 leading-1">
-                            <div className="text-amber-800">Some quote about pies & cakes. Or maybe about vampires?
+                        <Quote className="text-gray-600/50 leading-1">
+                            <div className="text-leather-400">Some quote about pies & cakes. Or maybe about vampires?
                             </div>
                         </Quote>
                     </div>
@@ -43,7 +43,7 @@ const CakeSection = () => {
                 </div>
                 <div className="absolute inset-0">
                     <Stamp>
-                        <div className="text-amber-500 text-center text-xl font-serif">
+                        <div className="text-laser-400 text-center text-3xl font-serif">
                             TASTES SO <br/> GOOD!
                         </div>
                     </Stamp>

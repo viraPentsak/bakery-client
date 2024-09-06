@@ -11,7 +11,7 @@ export interface NavLinkProps {
 
 // Basic links
 const NavLink: React.FC<NavLinkProps> = (props) => {
-    const className = clsx("transition", props.className, {"text-white hover:text-amber-700": !props.className});
+    const className = clsx("transition", props.className, {"text-white hover:text-leather-400": !props.className});
     const activeClassName = props.activeClassName || "text-amber-700";
     return (
         <Link to={props.href} className={className} activeClassName={activeClassName}>
