@@ -6,3 +6,9 @@
     --header-height: 3.375rem;
     --header-height-md: 4.375rem;
 }
+
+@layer base {
+    html{
+        @apply text-gray-600;
+    }
+}
