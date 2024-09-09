@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = (props) => {
                 {title && <h4 className="text-lg md:text-5xl pt-2 pb-3 font-serif font-bold">{title}</h4>}
                 {subtitle && <div className="text-sm uppercase text-leather-400 font-serif font-bold">{subtitle}</div>}
             </div>
-            {description && <div className="">{description}</div>}
+            {description && <div>{description}</div>}
             {children}
         </div>
     );

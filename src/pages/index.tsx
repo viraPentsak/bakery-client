@@ -11,12 +11,14 @@ import {
     currentDishSection,
     FeaturedSection,
 } from "./home";
+import VignetteOuterSVG from "@svg/vignette_outer.svg";
+import BreadSVG from "@svg/bread.svg";
 
 const sections = [
-    {element: CakeSection},
-    {title: "Menu", element: MenuSection},
-    {title: "Dish", element: currentDishSection},
-    {title: "Feature receipt", element: FeaturedSection},
+    {key: "cakes-section", element: CakeSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5'}},
+    {key: "menu-section", element: MenuSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5 bg-banner-menu'}},
+    {key: "dish-section", title: "Dish", element: currentDishSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5 bg-stone-800 bg-banner-featured'}},
+    {key: "feature-section", title: "Feature receipt", element: FeaturedSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5'}},
 ];
 
 const menuButton = (
@@ -25,11 +27,19 @@ const menuButton = (
              font-serif font-bold
              border border-dashed border-white/50
              py-4 px-6 md:px-10 xl:px-14
-             bg-stone-700/60
-             hover:bg-stone-700/80
+             bg-gray-600/50
+             hover:bg-gray-600/80
              hover:border-solid">
         Our Menu
     </NavLink>);
+
+const heroStamp = (
+    <div className="text-laser-400">
+        <VignetteOuterSVG className="absolute left-2/4 bottom-0 w-28 h-28 -ml-14 -mb-14 drop-shadow-sm"/>
+        <div className="absolute  left-2/4 bottom-0 rounded-full bg-white w-20 h-20 -ml-10 -mb-10 shadow-sm"></div>
+        <BreadSVG className="absolute left-2/4 bottom-0 w-14 h-14 m-auto -ml-7 -mb-7"/>
+    </div>
+);
 
 const IndexPage: React.FC<PageProps> = () => {
     const [ref, inView] = useInView();
@@ -53,14 +63,15 @@ const IndexPage: React.FC<PageProps> = () => {
                     </div>
                 </div>
             </div>
+            {heroStamp}
         </Hero>
     </div>;
 
     return (
-        <PageLayout headerClassName={inView ? " bg-stone-900/30" : " bg-stone-900"} beforeMain={heroSection}>
+        <PageLayout headerClassName={inView ? " bg-gray-600/30" : " bg-gray-800"} beforeMain={heroSection}>
+
             {sections.map((section) => (
-                <Section key={section.title}
-                         className={"py-8 md:py-14 xl:py-18 px-5 border-t-2 border-stone-800"}>
+                <Section key={section.key}  {...section.props}>
                     {section.title && <h2 className="text-5xl text-center font-serif font-bold">{section.title}</h2>}
                     <section.element/>
                 </Section>

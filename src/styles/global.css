@@ -12,3 +12,11 @@
         @apply text-gray-600;
     }
 }
+
+
+.mask-b-l-corner{
+    --mask: linear-gradient(45deg, transparent 35px, #000000 35px) no-repeat bottom left;
+    --mask-rounded: radial-gradient(circle 30px at bottom left, #0000 98%, red) bottom left;
+    /*--webkit-mask: var(--mask-rounded);*/
+    mask: var(--mask);
+}

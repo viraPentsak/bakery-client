@@ -14,17 +14,17 @@ const Header: React.FC<HeaderProps> = (props) => {
     return (
         <div className={className}>
             <div className="container xl:max-w-screen-xl">
-                <div className="grid sm:grid-cols-9 md:grid-cols-6 gap-4 align-middle items-center">
+                <div className="grid md:grid-cols-6 gap-4 align-middle items-center">
                     <div className="col-span-1">
                         <NavLogo href="/"
                                  destination="Home page link"
                                  logoClassName="w-16 md:w-32 max-h-16 p-2"
                                  activeClassName="text-white"/>
                     </div>
-                    <div className="col-span-4 hidden sm:block">
+                    <div className="col-span-4 hidden md:block">
                         <HeaderNav/>
                     </div>
-                    <div className="col-span-1  hidden sm:block">
+                    <div className="col-span-1  hidden md:block">
                         <SocialLinks className="text-white active:text-white p-2 border border-transparent hover:border-white hover:bg-white/20"
                                      wrapperClassName="justify-end"/>
                     </div>

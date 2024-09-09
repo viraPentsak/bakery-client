@@ -22,8 +22,9 @@ module.exports = {
             backgroundImage: {
                 'banner-menu': 'url(./../images/banner-menu.jpg)',
                 'banner-featured': 'url(./../images/banner-featured.jpg)',
-                'windmill': './src/images/bg-windmill.png',
-                'village': './src/images/bg-village.png',
+                'mountains': 'url(./../images/bg-mountains.png)',
+                'windmill': 'url(./../images/bg-windmill.png)',
+                'village': 'url(./../images/bg-village.png)',
             },
             colors: {
                 'straw': {
