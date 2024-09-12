@@ -5,18 +5,18 @@ import {CgChevronLeftO, CgChevronRightO} from "react-icons/cg";
 import {twMerge} from "tw-merge";
 import clsx from "clsx";
 
-interface ArrowProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface ArrowProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    next?: boolean
+    next?: boolean,
 }
 
 const Arrow: React.FC<ArrowProps> = ({children, next, ...rest}) => {
     const className: string = next ? "right-0" : "left-0";
 
     return (
-        <button className={`text-4xl md:text-2xl hover:text-straw-700 flex flex-col justify-center transition-colors absolute top-0 bottom-0 ${className}`}
-                {...rest}
-        >
+        <button
+            className={`text-4xl md:text-2xl hover:text-straw-700 flex flex-col justify-center transition-colors absolute top-0 bottom-0 disabled:opacity-50 ${className}`}
+            {...rest}>
             {children}
         </button>
     )
@@ -43,6 +43,9 @@ const Carousel: React.FC<CarouselProps> = (props) => {
         if (emblaApi) emblaApi.scrollNext()
     }, [emblaApi]);
 
+    const nextArrowDisabled = !(emblaApi && emblaApi.canScrollNext());
+    const prevArrowDisabled = !(emblaApi && emblaApi.canScrollPrev());
+
     return (
         <div className="px-6 relative">
             <div ref={emblaRef} className="overflow-hidden">
@@ -56,10 +59,10 @@ const Carousel: React.FC<CarouselProps> = (props) => {
                 </div>
             </div>
 
-            <Arrow aria-description="previous slide" onClick={scrollPrev}>
+            <Arrow aria-description="previous slide" onClick={scrollPrev} disabled={prevArrowDisabled}>
                 <CgChevronLeftO/>
             </Arrow>
-            <Arrow aria-description="next slide" onClick={scrollNext} next>
+            <Arrow aria-description="next slide" onClick={scrollNext} next disabled={nextArrowDisabled}>
                 <CgChevronRightO/>
             </Arrow>
         </div>
