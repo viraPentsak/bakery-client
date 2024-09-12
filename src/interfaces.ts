@@ -3,4 +3,14 @@ interface I_GeneralLink {
     link: string
 }
 
-export {I_GeneralLink};
+type Currency = { code: "USD", symbol: "$" } | { code: "UAH", symbol: "₴" };
+
+interface I_Price {
+    currency: Currency;
+    amount: number;
+}
+
+export {
+    I_GeneralLink,
+    I_Price
+};

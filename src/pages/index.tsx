@@ -15,10 +15,21 @@ import VignetteOuterSVG from "@svg/vignette_outer.svg";
 import BreadSVG from "@svg/bread.svg";
 
 const sections = [
-    {key: "cakes-section", element: CakeSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5'}},
-    {key: "menu-section", element: MenuSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5 bg-banner-menu'}},
-    {key: "dish-section", title: "Dish", element: currentDishSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5 bg-stone-800 bg-banner-featured'}},
-    {key: "feature-section", title: "Feature receipt", element: FeaturedSection, props: {className: 'py-8 md:py-14 xl:py-18 px-5'}},
+    {key: "cakes-section", element: CakeSection, props: {className: "py-8 md:py-14 xl:py-18 px-5"}},
+    {key: "menu-section", element: MenuSection, props: {className: "py-8 md:py-14 xl:py-18 2xl:py-24 px-5 bg-banner-menu"}},
+    {
+        key: "dish-section", element: currentDishSection,
+        props: {
+            className: "bg-gray-900 bg-banner-featured bg-no-repeat",
+            container: false
+        },
+    },
+    {
+        key: "feature-section",
+        title: "Feature receipt",
+        element: FeaturedSection,
+        props: {className: "py-8 md:py-14 xl:py-18 px-5"}
+    },
 ];
 
 const menuButton = (

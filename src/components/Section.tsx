@@ -5,14 +5,14 @@ import React from "react";
 // - set up id
 // - set up
 
-interface SectionProps extends React.HTMLAttributes<HTMLDivElement>{
+interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
     children?: React.ReactNode;
     bgHref?: string;
     container?: boolean;
     className?: string;
 }
 
-const Section: React.FC<SectionProps >  = (
+const Section: React.FC<SectionProps> = (
     {
         bgHref,
         children,
@@ -22,9 +22,11 @@ const Section: React.FC<SectionProps >  = (
     }) => {
     return (
         <section className={className} {...rest}>
-            <div className={container ? "container max-w-screen-xl" : ""}>
-                {children}
-            </div>
+            {container
+                ? <div className="container max-w-screen-xl">
+                    {children}
+                </div>
+                : children}
         </section>
     );
 };
