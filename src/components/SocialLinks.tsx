@@ -3,8 +3,9 @@ import {BiLogoTwitter, BiLogoFacebook, BiLogoInstagram, BiQuestionMark} from "re
 import {getSocialLinks} from "../hooks";
 import {twMerge} from "tw-merge";
 import clsx from "clsx";
+import {IconType} from "react-icons";
 
-const icons = {
+const icons: { [index: string]: IconType } = {
     twitter: BiLogoTwitter,
     facebook: BiLogoFacebook,
     instagram: BiLogoInstagram
@@ -12,18 +13,18 @@ const icons = {
 
 interface SocialLinksProps {
     className?: string;
-    wrapperClassName?:string;
+    wrapperClassName?: string;
 }
 
 const SocialLinks: React.FC<SocialLinksProps> = (props) => {
     const links = getSocialLinks();
-    const wrapperCN  = twMerge(clsx("flex flex-row flex-wrap gap-2 text-xl", props.wrapperClassName));
+    const wrapperCN = twMerge(clsx("flex flex-row flex-wrap gap-2 text-xl", props.wrapperClassName));
     const linkCN = twMerge(clsx("transition-colors", props.className));
 
     return (
         <div className={wrapperCN}>
             {links && links.map((link => {
-                const Icon = icons[link.name] || BiQuestionMark;
+                const Icon = link.name in icons ? icons[link.name] : BiQuestionMark;
 
                 return <a href={link.link} key={link.name} className={linkCN}>
                     <Icon/>
