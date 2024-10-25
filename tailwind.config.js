@@ -25,6 +25,7 @@ module.exports = {
                 'mountains': 'url(./../images/bg-mountains.png)',
                 'windmill': 'url(./../images/bg-windmill.png)',
                 'village': 'url(./../images/bg-village.png)',
+                'wheat-left': 'url(./../svg/wheat_left.svg)',
             },
             colors: {
                 'straw': {

@@ -2,6 +2,7 @@ import React from "react";
 import Pricing from "../../components/Pricing";
 import WheatSVG from "@svg/wheat.svg";
 import {I_Price} from "../../interfaces";
+import DescriptionCard from "../../components/DescriptionCard";
 
 const menu: { title: string, description: string, price: I_Price }[] = [
     {
@@ -39,10 +40,10 @@ const menu: { title: string, description: string, price: I_Price }[] = [
 
 const CurrentDishSection = () => {
     return (
-        <div className="bg-straw-950/20 py-8 md:py-14 xl:py-18 2xl:py-20 px-5 ">
+        <div className="bg-straw-950/20 py-8 md:py-14 xl:py-18 2xl:py-20 px-5">
             <div className="container max-w-screen-xl">
-                <div className="grid grid-cols-12">
-                    <div className="col-span-7 text-center">
+                <div className="md:grid md:grid-cols-12">
+                    <div className="md:col-span-6 xl:col-span-8 text-center">
                         <div className="pb-10 xl:pb-14 pt-1">
                             <div className="text-3xl md:text-6xl text-white font-serif font-bold">
                                 Breakfast
@@ -60,8 +61,8 @@ const CurrentDishSection = () => {
                             })}
                         </div>
                     </div>
-                    <div className="col-span-5">
-
+                    <div className="md:col-span-6 xl:col-span-4 md:pr-8 xl:pr-0">
+                        <DescriptionCard/>
                     </div>
                 </div>
             </div>
