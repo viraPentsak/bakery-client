@@ -23,7 +23,7 @@ const MenuTimeCard = () => (
 
 const MenuCarousel = () => {
     return (
-        <Carousel options={{align: 'start', loop: true}}
+        <Carousel options={{align: 'start', loop: false}}
                   slideClassName="rounded-full overflow-hidden pb-[100%] sm:pb-[50%] md:pb-[33%] relative sm:basis-1/2 md:basis-1/3"
             slides={[
             <StaticImage src={"./../../images/cakes_1.jpg"} alt="cakes" className="absolute inset-3.5 rounded-full "/>,
@@ -40,7 +40,7 @@ const MenuSection = () => {
             <div className="lg:basis-5/6 relative sm:pt-9 sm:pr-28 xl:flex flex-row ">
                 <div className="grow bg-straw-950 mask-b-l-corner overflow-hidden relative
                 min-h-72
-                after:w-[50px] after:h-[50px] after:bg-white after:absolute after:left-0 after:bottom-0 after:shadow after:cursor-pointer">
+                b-l-corner-flip after:bg-white  after:shadow after:cursor-pointer">
                     <div className="absolute left-0 top-0 bottom-0 h-full after:absolute after:inset-0 after:bg-gradient-to-r after:from-straw-950/40 after:to-transparent">
                         <StaticImage alt={"Current menu item"}
                                      className="h-full"

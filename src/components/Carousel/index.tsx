@@ -1,27 +1,10 @@
-import React, {useCallback} from "react";
+import React from "react";
 import {EmblaOptionsType} from "embla-carousel"
 import useEmblaCarousel from "embla-carousel-react";
 import {CgChevronLeftO, CgChevronRightO} from "react-icons/cg";
 import {twMerge} from "tw-merge";
 import clsx from "clsx";
-
-interface ArrowProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    children: React.ReactNode;
-    next?: boolean,
-}
-
-const Arrow: React.FC<ArrowProps> = ({children, next, ...rest}) => {
-    const className: string = next ? "right-0" : "left-0";
-
-    return (
-        <button
-            className={`text-4xl md:text-2xl hover:text-straw-700 flex flex-col justify-center transition-colors absolute top-0 bottom-0 disabled:opacity-50 ${className}`}
-            {...rest}>
-            {children}
-        </button>
-    )
-}
-
+import CarouselArrowButton, {useArrowControls} from "./CarouselArrowButton";
 
 interface CarouselProps {
     options?: EmblaOptionsType,
@@ -35,16 +18,7 @@ const Carousel: React.FC<CarouselProps> = (props) => {
 
     const slideCN = twMerge(clsx("flex-grow-0 flex-shrink-0 basis-full max-w-full px-3.5", props.slideClassName));
 
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev()
-    }, [emblaApi]);
-
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext()
-    }, [emblaApi]);
-
-    const nextArrowDisabled = !(emblaApi && emblaApi.canScrollNext());
-    const prevArrowDisabled = !(emblaApi && emblaApi.canScrollPrev());
+    const {nextDisabled, prevDisabled, onNextClick, onPrevClick} = useArrowControls(emblaApi);
 
     return (
         <div className="px-6 relative">
@@ -59,12 +33,12 @@ const Carousel: React.FC<CarouselProps> = (props) => {
                 </div>
             </div>
 
-            <Arrow aria-description="previous slide" onClick={scrollPrev} disabled={prevArrowDisabled}>
+            <CarouselArrowButton aria-description="previous slide" onClick={onPrevClick} disabled={prevDisabled}>
                 <CgChevronLeftO/>
-            </Arrow>
-            <Arrow aria-description="next slide" onClick={scrollNext} next disabled={nextArrowDisabled}>
+            </CarouselArrowButton>
+            <CarouselArrowButton aria-description="next slide" onClick={onNextClick} next disabled={nextDisabled}>
                 <CgChevronRightO/>
-            </Arrow>
+            </CarouselArrowButton>
         </div>
     );
 };

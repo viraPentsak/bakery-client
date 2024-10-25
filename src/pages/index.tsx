@@ -20,7 +20,7 @@ const sections = [
     {
         key: "dish-section", element: currentDishSection,
         props: {
-            className: "bg-gray-900 bg-banner-featured bg-no-repeat",
+            className: "bg-gray-900 bg-banner-featured bg-no-repeat bg-cover",
             container: false
         },
     },
